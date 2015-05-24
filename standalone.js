@@ -1,18 +1,17 @@
 var event = require("./lib/d3/event"),
     namespace = require("./lib/d3/namespace"),
-    selection = require("./lib/d3/selection"),
-    d3 = global.d3 || (global.d3 = {});
+    selection = require("./lib/d3/selection");
 
-d3.mouse = event.mouse;
-d3.touch = event.touch;
-d3.touches = event.touches;
-d3.namespace = namespace.prefix;
-d3.selection = selection;
-d3.select = selection.select;
-d3.selectAll = selection.selectAll;
+exports.mouse = event.mouse;
+exports.touch = event.touch;
+exports.touches = event.touches;
+exports.namespace = namespace.prefix;
+exports.selection = selection;
+exports.select = selection.select;
+exports.selectAll = selection.selectAll;
 
 // Deprecated aliases for backwards-compatibility with 3.x:
-d3.ns = namespace;
+exports.ns = namespace;
 selection.prototype.on = selection.prototype.event;
 selection.prototype.insert = selection.prototype.append;
 selection.prototype.classed = selection.prototype.class;
